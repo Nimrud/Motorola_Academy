@@ -6,8 +6,8 @@ public class Main {
         Thread calcThread = new Thread(calculation);
 
         calcThread.start();
-        calcThread.join();
-        //calcThread.interrupt();
+        //calcThread.join();
+        calcThread.interrupt();
 
         if (calculation.isFinished()) {
             System.out.println("Result: " + calculation.getResult());
