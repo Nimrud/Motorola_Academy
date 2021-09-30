@@ -13,7 +13,7 @@ public class Calculation implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Starting... " + Thread.currentThread().getId());
+        System.out.println("Starting thread #" + Thread.currentThread().getId());
 
         try {
             Thread.sleep(5000);
@@ -24,15 +24,7 @@ public class Calculation implements Runnable{
         result = a + b;
         isFinished = true;
 
-        System.out.println("Finishing... " + Thread.currentThread().getId());
-    }
-
-    public int getA() {
-        return a;
-    }
-
-    public int getB() {
-        return b;
+        System.out.println("Finishing thread #" + Thread.currentThread().getId());
     }
 
     public int getResult() {
