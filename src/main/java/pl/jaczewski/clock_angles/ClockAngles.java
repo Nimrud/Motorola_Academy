@@ -1,13 +1,14 @@
 package pl.jaczewski.clock_angles;
 
+// Jest godzina 3:15. Jaki kąt tworzą ze sobą wskazówki zegara?
+
 public class ClockAngles {
     public static void main(String[] args) {
-        System.out.println(calcAngle(3, 26));
-        System.out.println(calcAngle(8, 11));
+        ClockAngles angles = new ClockAngles();
+        System.out.println(angles.calcAngle(3, 15));
     }
 
-
-    static int calcAngle(int hrs, int min) {
+    public int calcAngle(int hrs, int min) {
         if (hrs < 0 || min < 0 || hrs > 24 || min > 60) {
             throw new IllegalArgumentException("Złe dane wejściowe");
         }
