@@ -6,26 +6,29 @@ import java.util.Locale;
 public class Palindrome {
     public static void main(String[] args) {
         Palindrome palindrome = new Palindrome();
-        System.out.println(palindrome.isPalidrome("kaj ak"));
+        System.out.println(palindrome.isPalidrome(" kaj \t \n  ak\n "));
     }
 
     public boolean isPalidrome(String input) {
         if (input == null) {
-            throw new NullPointerException("nie może być nullem");
+            throw new NullPointerException("Wprowadź wyrażenie (nie może być puste)");
         }
 
         String trimmedInput = input.trim().toLowerCase(Locale.ROOT);
+        String signsRemoved = trimmedInput.replaceAll("\\s+", "");
+        System.out.println("signsRemoved: " + signsRemoved);
 
-        // usuwanie spacji ze środka stringa:
-        String[] trimmedInput2 = trimmedInput.split(" ");
-        StringBuilder sb = new StringBuilder();
-        for (String s : trimmedInput2) {
-            sb.append(s);
+//        // usuwanie spacji ze środka stringa:
+//        String[] trimmedInput2 = trimmedInput.split(" ");
+//        StringBuilder sb = new StringBuilder();
+//        for (String s : trimmedInput2) {
+//            sb.append(s);
+//
+//        }
+//        String stringRebuilt = sb.toString();
+//        System.out.println("reb: " + stringRebuilt);
 
-        }
-        String stringRebuilt = sb.toString();
-
-        char[] inputChars = stringRebuilt.toCharArray();
+        char[] inputChars = signsRemoved.toCharArray();
         char[] outputChars = new char[inputChars.length];
 
         for (int i = 0; i < inputChars.length; i++) {
